@@ -14,7 +14,7 @@ public class Main {
         Truck belaz = new Truck("BELAZ", "Gigatruck", 5.2,LoadCapacity.N3);
         Truck man = new Truck("MAN", "woman", 4.0, LoadCapacity.N2);
         Truck zil = new Truck("ZIL", "old shool", 4.6,LoadCapacity.N1);
-        System.out.println(zil);
+       /* System.out.println(zil);
         zil.Start();
         zil.pitStop();
         zil.End();
@@ -42,6 +42,8 @@ public class Main {
         kamaz.maxSpeed("290 км/ч");
         kamaz.bestLapTime("2:24");
         transport.seprator();
+
+        */
         List<transport> transports = List.of(delorian,porshe,zil,man,volvo,mersedes);
         Mechanic<transport> pin = new Mechanic<>("Pin","Smesharikov","Smeshariki&co");
         Mechanic<Truck> krosh = new Mechanic<>("Krosh","Smesharikov","Smeshariki&co");
@@ -80,10 +82,12 @@ public class Main {
         low.driveStart(volvo);
 
 
+
+
         Mechanic<transport> pin1 = new Mechanic<>("Pin","Smesharikov","Smeshariki&co");
         zil.addMechanic(pin1);
         System.out.println(Mechanic.getServiceMachin());
-
+/*
         diagnostika(delorian, lada, porshe, mersedes,kamaz,belaz);
     }
     public static void diagnostika (transport... cars) {
@@ -99,6 +103,8 @@ public class Main {
                 System.out.println("Автомобиль прошёл диагностику " + transports.getMark());
             }
         }
+
+ */
 
     }
 
