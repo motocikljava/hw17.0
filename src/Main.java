@@ -71,22 +71,37 @@ public class Main {
         mersedes.addSponsor(scrooge);
 
 
-
-
-
         DriverCar<Car> lev = new DriverCar<>("Levchenko", 'A', 10);
+        lev.driveStart(lada);
+        DriverCar<Car> law = new DriverCar<>("Lavchenko", 'A', 20);
+        lev.driveStart(lada);
+        DriverCar<Car> lek = new DriverCar<>("Lekchenko", 'A', 12);
         lev.driveStart(lada);
         DriverTruck<Truck> volk = new DriverTruck<>("Volkov", 'B', 12);
         volk.driveStart(zil);
         DriverAutobus<Autobus> low = new DriverAutobus<>("Lowertunel", 'C', 2);
         low.driveStart(volvo);
 
+        Set<DriverTruck> DrC = new HashSet<>();
+        DrC.add(volk);
+        DrC.add(volk);
+
+        Set<DriverAutobus> DrA = new HashSet<>();
+        DrA.add(low);
+        Set<DriverCar> DrCr = new HashSet<>();
+        DrCr.add(lev);
+        DrCr.add(law);
+        DrCr.add(lek);
+        DrCr.add(lek);
+        System.out.println(DrC + "\n" + DrA+ "\n" + DrCr);
+
+
 
 
 
         Mechanic<transport> pin1 = new Mechanic<>("Pin","Smesharikov","Smeshariki&co");
         zil.addMechanic(pin1);
-        System.out.println(Mechanic.getServiceMachin());
+        System.out.println(pin1);
 /*
         diagnostika(delorian, lada, porshe, mersedes,kamaz,belaz);
     }
