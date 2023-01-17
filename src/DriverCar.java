@@ -1,4 +1,5 @@
 import java.util.List;
+import java.util.Objects;
 
 public class DriverCar<A extends Car>{
     private String driverSecName;
@@ -18,6 +19,19 @@ public class DriverCar<A extends Car>{
             this.experience = experience;
         }
 
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        DriverCar<?> driverCar = (DriverCar<?>) o;
+        return category == driverCar.category && experience == driverCar.experience && driverSecName.equals(driverCar.driverSecName);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(driverSecName, category, experience);
     }
 
     public void driveStart(A transport) {

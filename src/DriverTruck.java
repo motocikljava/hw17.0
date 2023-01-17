@@ -1,7 +1,4 @@
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 public class DriverTruck<B extends Truck> {
     String driverSecName;
@@ -21,6 +18,19 @@ public class DriverTruck<B extends Truck> {
             this.experience = experience;
         }
 
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        DriverTruck<?> that = (DriverTruck<?>) o;
+        return CATEGORY == that.CATEGORY && experience == that.experience && driverSecName.equals(that.driverSecName);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(driverSecName, CATEGORY, experience);
     }
 
     public void driveStart(B transport) {
