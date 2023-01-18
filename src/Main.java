@@ -14,7 +14,7 @@ public class Main {
         Truck belaz = new Truck("BELAZ", "Gigatruck", 5.2,LoadCapacity.N3);
         Truck man = new Truck("MAN", "woman", 4.0, LoadCapacity.N2);
         Truck zil = new Truck("ZIL", "old shool", 4.6,LoadCapacity.N1);
-        System.out.println(zil);
+       /* System.out.println(zil);
         zil.Start();
         zil.pitStop();
         zil.End();
@@ -42,6 +42,8 @@ public class Main {
         kamaz.maxSpeed("290 км/ч");
         kamaz.bestLapTime("2:24");
         transport.seprator();
+
+        */
         List<transport> transports = List.of(delorian,porshe,zil,man,volvo,mersedes);
         Mechanic<transport> pin = new Mechanic<>("Pin","Smesharikov","Smeshariki&co");
         Mechanic<Truck> krosh = new Mechanic<>("Krosh","Smesharikov","Smeshariki&co");
@@ -69,21 +71,38 @@ public class Main {
         mersedes.addSponsor(scrooge);
 
 
-
-
-
         DriverCar<Car> lev = new DriverCar<>("Levchenko", 'A', 10);
+        lev.driveStart(lada);
+        DriverCar<Car> law = new DriverCar<>("Lavchenko", 'A', 20);
+        lev.driveStart(lada);
+        DriverCar<Car> lek = new DriverCar<>("Lekchenko", 'A', 12);
         lev.driveStart(lada);
         DriverTruck<Truck> volk = new DriverTruck<>("Volkov", 'B', 12);
         volk.driveStart(zil);
         DriverAutobus<Autobus> low = new DriverAutobus<>("Lowertunel", 'C', 2);
         low.driveStart(volvo);
 
+        Set<DriverTruck> DrC = new HashSet<>();
+        DrC.add(volk);
+        DrC.add(volk);
+
+        Set<DriverAutobus> DrA = new HashSet<>();
+        DrA.add(low);
+        Set<DriverCar> DrCr = new HashSet<>();
+        DrCr.add(lev);
+        DrCr.add(law);
+        DrCr.add(lek);
+        DrCr.add(lek);
+        System.out.println(DrC + "\n" + DrA+ "\n" + DrCr);
+
+
+
+
 
         Mechanic<transport> pin1 = new Mechanic<>("Pin","Smesharikov","Smeshariki&co");
         zil.addMechanic(pin1);
-        System.out.println(Mechanic.getServiceMachin());
-
+        System.out.println(pin1);
+/*
         diagnostika(delorian, lada, porshe, mersedes,kamaz,belaz);
     }
     public static void diagnostika (transport... cars) {
@@ -99,6 +118,8 @@ public class Main {
                 System.out.println("Автомобиль прошёл диагностику " + transports.getMark());
             }
         }
+
+ */
 
     }
 
